@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
-{% for post in posts %}
-<ul>
-  <li>
-    Автор: {{ post.author.get_full_name }}
-  </li>
-  <li>
-    Дата публикации: {{ post.pub_date|date:"d E Y" }}
-  </li>
-</ul>
-<p>{{ post.text }}</p>    
-{% if not forloop.last %}<hr>{% endif %}
-{% endfor %}
+      <div class="container py-5">
+        {{ group.title }}
+        <p>
+          {{ group.description }}
+          {{ post.author.get_full_name }}
+        </p>
+        <article>
+          {% for post in posts %}
+          <ul>
+           <li>
+            Автор: {{ post.author.get_full_name }}
+           </li>
+          <li>
+            Дата публикации: {{ post.pub_date|date:"d E Y" }}
+          </li>
+          </ul>
+          <p>
+             {{ post.text }}
+          </p>    
+          {% if not forloop.last %}
+           <hr>
+          {% endif %}
+          {% endfor %}
+        </div>
 {% endblock %}

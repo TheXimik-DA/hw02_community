@@ -28,3 +28,6 @@ class Post(models.Model):
         related_name='group',
         on_delete=models.CASCADE
     )
+
+    class Meta:
+        ordering = ['-pub_date']
