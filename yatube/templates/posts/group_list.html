@@ -15,8 +15,8 @@
         <p> {{ post.text }} </p> 
         {% if not forloop.last %}<hr>{% endif %}
         {% empty %}
-        <h3>У группы "{{ group.title }}" отсутствуют записи. Поделитесь чем-гибудь!</h3>   
-        {% endfor %} 
+          <h3>У группы "{{ group.title }}" отсутствуют записи. Поделитесь чем-гибудь!</h3>   
+      {% endfor %} 
     </article>     
   </div> 
 {% endblock %} 
