@@ -145,5 +145,4 @@ dmypy.json
 
 .mypy_cache
 
-.bootstrap.min.css
-.bootstrap.min.css.map
+.css/
