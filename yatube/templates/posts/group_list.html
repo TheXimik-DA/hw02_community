@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
-{% block content %} 
+{% block title %} Записи сообщества {{ group.title }} {% endblock %}  
+{% block content %}
   <div class="container py-5"> 
     <p> 
       <h3> {{ group.title }} </h3>
@@ -13,7 +14,7 @@
         </ul> 
         <p> {{ post.text|linebreaksbr }} </p> 
         {% if not forloop.last %}<hr>{% endif %}
-        {% empty %}
+      {% empty %}
         <h3>Отсутствуют записи. Поделитесь чем-гибудь!</h3>   
       {% endfor %} 
     </article>     
