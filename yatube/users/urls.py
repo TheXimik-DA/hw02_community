@@ -29,7 +29,7 @@ urlpatterns = [
       name='password_reset_complite'
     ),
     path(
-      'password_reset_confirm/',
+      'auth/reset/<uidb64>/<token>/',
       PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'),
       name='password_reset_confirm'
     ),
