@@ -19,12 +19,12 @@ urlpatterns = [
       name='login'
     ),
     path(
-      'password_change_done/',
+      'auth/password_change/done/',
       PasswordChangeDoneView.as_view(template_name='users/password_change_done.html'),
       name='password_change_done'
     ),
     path(
-      'password_reset_complite/',
+      'auth/reset/done/',
       PasswordResetCompleteView.as_view(template_name='users/password_reset_complite.html'),
       name='password_reset_complite'
     ),
@@ -36,19 +36,19 @@ urlpatterns = [
       name='password_reset_confirm'
     ),
     path(
-      'password_reset_done/',
+      'auth/password_reset/done/',
       PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'),
       name='password_reset_done'
     ),
     path(
-      'password_change_form/',
+      'auth/password_change/',
       PasswordChangeView.as_view(
       success_url = reverse_lazy('users:password_change_form'),
       template_name='users/password_change_form.html'),
       name='password_change_form'
     ),
     path(
-      'password_reset_form/',
+      'auth/password_reset/',
       PasswordResetView.as_view(
       success_url = reverse_lazy('users:password_reset_form'),
       template_name='users/password_reset_form.html'),
