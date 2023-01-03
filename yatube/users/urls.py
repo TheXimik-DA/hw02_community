@@ -1,7 +1,7 @@
 # users/urls.py
 from . import views
 # Импортируем из приложения django.contrib.auth нужный view-класс
-from django.contrib.auth.views import LoginView, LogoutView, PasswordResetCompleteView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordChangeDoneView, PasswordChangeView
+from django.contrib.auth.views import LoginView, LogoutView, reverse_lazy, PasswordResetCompleteView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordChangeDoneView, PasswordChangeView
 from django.urls import path
 
 app_name = 'users'
@@ -30,7 +30,9 @@ urlpatterns = [
     ),
     path(
       'auth/reset/<uidb64>/<token>/',
-      PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'),
+      PasswordResetConfirmView.as_view(
+      success_url = reverse_lazy('users:password_reset_complite'),
+      template_name='users/password_reset_confirm.html'),
       name='password_reset_confirm'
     ),
     path(
@@ -40,12 +42,16 @@ urlpatterns = [
     ),
     path(
       'password_change_form/',
-      PasswordChangeView.as_view(template_name='users/password_change_form.html'),
+      PasswordChangeView.as_view(
+      success_url = reverse_lazy('users:password_change_form'),
+      template_name='users/password_change_form.html'),
       name='password_change_form'
     ),
     path(
       'password_reset_form/',
-      PasswordResetView.as_view(template_name='users/password_reset_form.html'),
+      PasswordResetView.as_view(
+      success_url = reverse_lazy('users:password_reset_form'),
+      template_name='users/password_reset_form.html'),
       name='password_reset_form'
     ),
 ] 
