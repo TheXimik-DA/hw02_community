@@ -7,7 +7,7 @@
       <h5>{{ group.description|linebreaksbr }}</h5> 
     </p> 
     <article> 
-      {% for post in posts %} 
+      {% for post in page_obj %} 
         <ul> 
           <li> Автор: {{ post.author.get_full_name }} </li> 
           <li> Дата публикации: {{ post.pub_date|date:"d E Y" }} </li> 
@@ -15,7 +15,7 @@
         <p> {{ post.text|linebreaksbr }} </p> 
         {% if not forloop.last %}<hr>{% endif %}
       {% empty %}
-        <h3>Отсутствуют записи. Поделитесь чем-гибудь!</h3>   
+        <h3>Отсутствуют записи. Поделитесь чем-нибудь!</h3>   
       {% endfor %} 
     </article>     
   </div> 

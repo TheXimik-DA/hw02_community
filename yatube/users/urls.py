@@ -1,7 +1,7 @@
 # users/urls.py
 from . import views
 # Импортируем из приложения django.contrib.auth нужный view-класс
-from django.contrib.auth.views import LoginView, LogoutView, reverse_lazy, PasswordResetCompleteView, PasswordResetView, PasswordResetConfirmView, PasswordResetDoneView, PasswordChangeDoneView, PasswordChangeView
+from django.contrib.auth.views import *
 from django.urls import path
 
 app_name = 'users'
@@ -24,7 +24,7 @@ urlpatterns = [
       name='password_change_done'
     ),
     path(
-      'auth/reset/done/',
+      'auth/reset/done',
       PasswordResetCompleteView.as_view(template_name='users/password_reset_complite.html'),
       name='password_reset_complite'
     ),
