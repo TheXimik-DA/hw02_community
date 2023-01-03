@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% block title %} Последние обновления на сайте{% endblock %}
 {% block content %} 
+  {% for post in page_obj %}
   <div class="container py-5"> 
     <h2>Последние обновления на сайте. </h2>
-    <article> 
+    <article>
       {% for post in posts %} 
         <ul> 
           <li> Автор: {{ post.author.get_full_name }} </li> 
@@ -19,5 +20,7 @@
         <h3>Отсутствуют записи. Поделитесь чем-нибудь!</h3> 
       {% endfor %}
     </article>        
-  </div> 
+  </div>
+  {% endfor %}
+{% include 'posts/includes/paginator.html' %}  
 {% endblock %} 
