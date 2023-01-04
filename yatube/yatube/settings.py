@@ -76,7 +76,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "yatube.wsgi.application"
 
-LIMIT_POSTS = 10
+
+MAX_RECORDS = 10
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

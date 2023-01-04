@@ -2,32 +2,23 @@
 {% block title %}Технологии{% endblock %}
 {% block content %}
 <div class="container py-5"> 
-{% comment %} Колонки с отступом сверху и снизу {% endcomment %}
-<div class="row">
-  <h4>Вот что я умею</h4>
-  {% comment %}
-    Боковой блок со списком технологий 
-    Займет всю ширину блока на мобильном
-    и 25% при размерах экрана ≥768px
-  {% endcomment %}
-  <aside class="col-12 col-md-3">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        Python
-      </li>
-      <li class="list-group-item">
-        Django
-      </li>
-    </ul>
-  </aside>
-  {% comment %}
-    Статья  
-    Займет всю ширину блока на мобильном
-    и 75% при размерах экрана ≥768px
-  {% endcomment %}
-  <article class="col-12 col-md-9">
-    <p>Текст страницы "Технологии"</p>
-  </article>
+  <div class="row">
+    <h1>Технологии</h1>
+    <aside class="col-15 col-md-3">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Python
+        </li>
+        <li class="list-group-item">
+          Django
+        </li>
+      </ul>
+    </aside>
+    <article class="col-15 col-md-5">
+      <p>
+      Так, для создания данного сайта использовались такие ресурсы, как: <li>Python 3.9 и Django 2.2.9</li> <li>Код писал на VSCode</li> 
+      </p>
+    </article>
+  </div>
 </div>
-</div>
-{% endblock %} 
+{% endblock %}
