@@ -1,12 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-
 from .models import Post, Group
-
 from django.contrib.auth.decorators import login_required
-
 from django.core.paginator import Paginator
-
 from django.conf import settings
+from django.views.generic.base import TemplateView
 
 def index(request):
     post_list = Post.objects.all()
